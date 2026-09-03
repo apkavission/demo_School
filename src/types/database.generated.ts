@@ -278,6 +278,40 @@ export type Database = {
         };
         Relationships: [];
       };
+      /** A view. */
+      media_public: {
+        Row: {
+          id: string | null;
+          storage_key: string | null;
+          filename: string | null;
+          alt: string | null;
+          width: number | null;
+          height: number | null;
+          mime_type: string | null;
+          created_at: string | null;
+        };
+        Insert: {
+          id?: string | null;
+          storage_key?: string | null;
+          filename?: string | null;
+          alt?: string | null;
+          width?: number | null;
+          height?: number | null;
+          mime_type?: string | null;
+          created_at?: string | null;
+        };
+        Update: {
+          id?: string | null;
+          storage_key?: string | null;
+          filename?: string | null;
+          alt?: string | null;
+          width?: number | null;
+          height?: number | null;
+          mime_type?: string | null;
+          created_at?: string | null;
+        };
+        Relationships: [];
+      };
       /** A table. */
       messages: {
         Row: {
@@ -337,6 +371,102 @@ export type Database = {
           href?: string;
           sort_order?: number;
           is_active?: boolean;
+        };
+        Relationships: [];
+      };
+      /** A table. */
+      page_sections: {
+        Row: {
+          id: string;
+          page_id: string;
+          heading: string | null;
+          body: string | null;
+          image_id: string | null;
+          layout: string;
+          sort_order: number;
+        };
+        Insert: {
+          id?: string;
+          page_id: string;
+          heading?: string | null;
+          body?: string | null;
+          image_id?: string | null;
+          layout?: string;
+          sort_order?: number;
+        };
+        Update: {
+          id?: string;
+          page_id?: string;
+          heading?: string | null;
+          body?: string | null;
+          image_id?: string | null;
+          layout?: string;
+          sort_order?: number;
+        };
+        Relationships: [];
+      };
+      /** A table. */
+      pages: {
+        Row: {
+          id: string;
+          variant_id: string;
+          slug: string;
+          title: string;
+          summary: string | null;
+          status: Database["demo_school"]["Enums"]["publish_state"];
+          meta_title: string | null;
+          meta_description: string | null;
+          sort_order: number;
+          created_at: string;
+        };
+        Insert: {
+          id?: string;
+          variant_id: string;
+          slug: string;
+          title: string;
+          summary?: string | null;
+          status?: Database["demo_school"]["Enums"]["publish_state"];
+          meta_title?: string | null;
+          meta_description?: string | null;
+          sort_order?: number;
+          created_at?: string;
+        };
+        Update: {
+          id?: string;
+          variant_id?: string;
+          slug?: string;
+          title?: string;
+          summary?: string | null;
+          status?: Database["demo_school"]["Enums"]["publish_state"];
+          meta_title?: string | null;
+          meta_description?: string | null;
+          sort_order?: number;
+          created_at?: string;
+        };
+        Relationships: [];
+      };
+      /** A table. */
+      share_link_opens: {
+        Row: {
+          id: string;
+          link_id: string;
+          opened_at: string;
+          user_agent: string | null;
+          referrer: string | null;
+        };
+        Insert: {
+          id?: string;
+          link_id: string;
+          opened_at?: string;
+          user_agent?: string | null;
+          referrer?: string | null;
+        };
+        Update: {
+          id?: string;
+          link_id?: string;
+          opened_at?: string;
+          user_agent?: string | null;
+          referrer?: string | null;
         };
         Relationships: [];
       };
@@ -450,6 +580,9 @@ export type Database = {
           sort_order: number;
           created_at: string;
           updated_at: string;
+          logo_shows_name: boolean;
+          meta_title: string | null;
+          meta_description: string | null;
         };
         Insert: {
           id?: string;
@@ -473,6 +606,9 @@ export type Database = {
           sort_order?: number;
           created_at?: string;
           updated_at?: string;
+          logo_shows_name?: boolean;
+          meta_title?: string | null;
+          meta_description?: string | null;
         };
         Update: {
           id?: string;
@@ -496,6 +632,9 @@ export type Database = {
           sort_order?: number;
           created_at?: string;
           updated_at?: string;
+          logo_shows_name?: boolean;
+          meta_title?: string | null;
+          meta_description?: string | null;
         };
         Relationships: [];
       };
